@@ -15,7 +15,7 @@ app.add_middleware(
    allow_origins=["*"],
    allow_credentials=True,
    allow_methods=["*"],
-   allow_headers=["*"],
+   allow_headers=["*"],)
 
 # Create tables at startup
 @app.on_event("startup")
@@ -72,3 +72,4 @@ async def delete_item(item_id: int, db: AsyncSession = Depends(get_db)):
    await db.delete(db_item)
    await db.commit()
    return None
+
