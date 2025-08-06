@@ -1,12 +1,12 @@
 from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from sqlalchemy.exc import NoResultFound
 from fastapi.middleware.cors import CORSMiddleware
 
-from .database import Base, engine, async_session
-from .models import Item
-from .schemas import ItemCreate, ItemUpdate, ItemOut
+from app.database import Base, engine, async_session
+from app.models import Item
+from app.schemas import ItemCreate, ItemUpdate, ItemOut
+
 
 app = FastAPI(title="Coolify FastAPI Postgres Demo")
 
@@ -72,4 +72,5 @@ async def delete_item(item_id: int, db: AsyncSession = Depends(get_db)):
    await db.delete(db_item)
    await db.commit()
    return None
+
 
