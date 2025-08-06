@@ -7,5 +7,6 @@ services:
    environment:
      - DATABASE_URL=postgresql+asyncpg://postgres:Vj9rFBQsAhmVzoHY96iT8xjMBejszoOzLqBQCbSu6ceodbjLT9zVjp1zzDjLi1az@31.97.148.167:5512/postgres
    ports:
-     - "8000:8000"
+     - "8888:8000"
    restart: unless-stopped
+
